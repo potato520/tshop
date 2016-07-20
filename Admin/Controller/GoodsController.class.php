@@ -3,7 +3,7 @@
  * @Author: potato520
  * @Date:   2016-07-19 23:31:03
  * @Last Modified by:   potato520
- * @Last Modified time: 2016-07-20 19:50:58
+ * @Last Modified time: 2016-07-20 22:00:34
  */
 
 namespace Admin\Controller;
@@ -37,6 +37,10 @@ order("id desc")->select();
 			if($goods_id = M("goods")->add($data)){
 				#上传商品相册
 				$this->upPics($goods_id);
+
+				$this->success("添加商品成功..");die;
+			}else{
+				$this->success("添加商品失败..");die;
 			}
 
 		}
@@ -63,6 +67,9 @@ order("id desc")->select();
 
 			if($count){
 				$this->upPics($data['id']);
+				$this->success("修改商品成功..");die;
+			}else{
+				$this->success("修改商品失败..");die;
 			}
 
 			return;
