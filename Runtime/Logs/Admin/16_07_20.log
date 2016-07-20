@@ -1,0 +1,64 @@
+[ 2016-07-20T16:35:37+08:00 ] 127.0.0.1 /index.php/Admin/Goods/updata
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : UPDATE `goods` SET `goods_name`='饮料',`goods_price`='10.00',`goods_number`='1',`goods_weight`='1',`goods_introduce`='',`id`='3',`update_time`='1469003737' WHERE ( id =  )
+
+[ 2016-07-20T16:55:34+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add
+ERR: 1062:Duplicate entry '商品1号' for key 'goods_name'
+ [ SQL语句 ] : INSERT INTO `goods` (`goods_name`,`goods_price`,`goods_number`,`goods_weight`,`goods_introduce`,`update_time`,`add_time`) VALUES ('商品1号','100','120','10','','1469004934','1469004934')
+
+[ 2016-07-20T17:02:46+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( id =  ) LIMIT 1  
+
+[ 2016-07-20T17:03:16+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( id =  ) LIMIT 1  
+
+[ 2016-07-20T18:36:03+08:00 ] 127.0.0.1 /index.php/Admin/Goods/add
+ERR: 1062:Duplicate entry '' for key 'goods_name'
+ [ SQL语句 ] : INSERT INTO `goods` (`goods_name`,`goods_price`,`goods_number`,`goods_weight`,`goods_introduce`,`update_time`,`add_time`) VALUES ('','','0','0','','1469010963','1469010963')
+
+[ 2016-07-20T19:09:53+08:00 ] 127.0.0.1 /index.php/Admin/Goods/updata/goods_id/Public/Admin/Uploads/pics/2016-07-20/s_578f42e533eee.jpg%7Csubstr=
+ERR: 1054:Unknown column 'Public' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( id = Public ) LIMIT 1  
+
+[ 2016-07-20T19:09:53+08:00 ] 127.0.0.1 /index.php/Admin/Goods/updata/goods_id/Public/Admin/Uploads/pics/2016-07-20/s_578f42e53371e.jpg%7Csubstr=
+ERR: 1054:Unknown column 'Public' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( id = Public ) LIMIT 1  
+
+[ 2016-07-20T19:09:53+08:00 ] 127.0.0.1 /index.php/Admin/Goods/updata/goods_id/Public/Admin/Uploads/pics/2016-07-20/s_578f42e5346be.jpg%7Csubstr=
+ERR: 1054:Unknown column 'Public' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `goods` WHERE ( id = Public ) LIMIT 1  
+
+[ 2016-07-20T19:51:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delpic
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods_pics` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `goods_pics` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `goods_pics` WHERE `id` = 13 [ RunTime:0.1100s ]
+
+[ 2016-07-20T19:52:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delpic
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods_pics` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `goods_pics` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0010s ]
+SQL: DELETE FROM `goods_pics` WHERE `id` = 10 [ RunTime:0.1220s ]
+
+[ 2016-07-20T19:53:59+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delpic
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods_pics` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `goods_pics` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `goods_pics` WHERE `id` = 15 [ RunTime:0.0780s ]
+
+[ 2016-07-20T19:56:33+08:00 ] 127.0.0.1 /index.php/Admin/Goods/delpic
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods_pics` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `goods_pics` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0000s ]
+SQL: DELETE FROM `goods_pics` WHERE `id` = 3 [ RunTime:0.1160s ]
+

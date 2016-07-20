@@ -1,0 +1,233 @@
+	<include file="Tpl:head_main" />	
+
+	<!-- 上传图片插件开始 -->	
+
+	<!--[if !IE]>	
+	-->
+	<script type="text/javascript">
+			window.jQuery || document.write("<script src='__PUBLIC__/Admin/Ace/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");</script>
+
+	<!-- <![endif]-->	
+
+	<!--[if IE]>	
+	<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");</script>
+	<![endif]-->	
+
+	<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='__PUBLIC__/Admin/Ace/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");</script>
+
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/typeahead-bs2.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/chosen.jquery.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/fuelux/fuelux.spinner.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/moment.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/daterangepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap-colorpicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.knob.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.autosize.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.maskedinput.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap-tag.min.js"></script>
+
+	<!-- ace scripts -->	
+
+	<script src="__PUBLIC__/Admin/Ace/assets/js/ace-elements.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/ace.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/mustache\app\views\assets\scripts\form-elements.js"></script>
+
+	<!-- 上传图片插件结束 -->	
+
+	<!-- 百度编辑器开始 -->	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/ueditor.all.min.js"></script>
+	<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->	
+	<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
+	<!-- 百度编辑器结束 -->	
+
+	<!-- 时间控件star -->	
+	<script src="__PUBLIC__/Admin/laydate/laydate.js"></script>
+	<!-- 时间控件end -->	
+
+	<div class="page-content">
+	<div class="row">
+	<div class="col-xs-12">
+	<div class="widget-box">
+		<div class="widget-header">
+			<h4>添加内容</h4>
+
+		</div>
+
+		<div class="widget-body">
+			<div class="widget-main no-padding">
+				<!-- PAGE CONTENT BEGINS -->	
+				<form action="__CONTROLLER__/add" enctype="multipart/form-data"  method="post" class="form-horizontal" role="form">
+					<br>	
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-1">标题</label>
+
+						<div class="col-sm-7">
+							<input type="text"  id="form-field-1" placeholder="标题" class="col-xs-10 col-sm-5" name="title" />	
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-2">摘要</label>
+
+						<div class="col-sm-7">
+							<input type="text"  id="form-field-2" placeholder="摘要" class="col-xs-10 col-sm-5" name="summary" />	
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-3">来源</label>
+
+						<div class="col-sm-7">
+							<input type="text"  id="form-field-3" placeholder="来源" class="col-xs-10 col-sm-5" name="infoFrom" />	
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-4">缩略图</label>
+
+						<div class="col-sm-3">
+							<div class="widget-box">
+								<div class="widget-header">
+									<h4>上传文章缩略图</h4>
+
+									<span class="widget-toolbar">
+										<a href="#" data-action="collapse"> <i class="icon-chevron-up"></i>
+										</a>
+
+										<a href="#" data-action="close"> <i class="icon-remove"></i>
+										</a>
+									</span>
+								</div>
+
+								<div class="widget-body">
+									<div class="widget-main">
+										<!-- 上传方式1 -->	
+										<input type="file" id="id-input-file-2" name="thumb" />	
+
+										<!-- 上传方式2 -->	
+										<!-- <input multiple="" type="file" id="id-input-file-3" />	
+										<label>
+											<input type="checkbox" name="file-format" id="id-file-format" class="ace" />	
+											<span class="lbl">清空所有</span>
+										</label>
+										-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-5">作者</label>
+
+						<div class="col-sm-7">
+							<input type="text"  id="form-field-5" placeholder="作者" class="col-xs-10 col-sm-5" name="author" />	
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-4 control-label no-padding-right" for="form-field-6">发布日期</label>
+
+						<div class="col-sm-7">
+							<input type="text"  id="form-field-6" placeholder="发布日期" class="col-xs-10 col-sm-5" name="published_date" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" value="<php>echo date("Y-m-d H:i:s",time())</php>
+						" />
+					</div>
+				</div>
+				<script>
+;!function(){
+
+//laydate.skin('molv');
+
+laydate({
+   elem: '#form-field-6'
+})
+
+}();
+	</script>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label no-padding-right" for="form-field-select-7">所属栏目</label>
+
+					<div class="col-sm-3">
+						<select class="form-control" name="category_id" id="form-field-select-7">
+							<option value="0">顶级栏目</option>
+							<volist name="cate" id="ca">
+								<option value="{$ca.id}">
+									{$ca.level|str_repeat="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",###}{$ca.name}
+								</option>
+							</volist>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label no-padding-right" for="form-field-select-8">文章状态</label>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否置顶&nbsp;&nbsp;&nbsp;&nbsp;
+					<label style="margin-top:5px;">
+						<input name="top" class="ace ace-switch ace-switch-5" type="checkbox" value="1" />	
+						<span class="lbl"></span>
+					</label>
+
+					<div class="col-sm-1">
+						<select class="form-control" name="status" id="form-field-select-1">
+							<option value="1">显示</option>
+							<option value="2">草稿</option>
+							<option value="3">隐藏</option>
+						</select>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+
+					<div class="col-md-10 col-sm-10" style="margin-left:7%;">
+						<textarea name="content" id="content" style="height:400px;"></textarea>
+					</div>
+				</div>
+
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-4 col-md-8">
+						<button class="btn btn-info" type="button">
+							<i class="icon-ok bigger-110"></i>
+							提交
+						</button>
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn" type="reset">
+							<i class="icon-undo bigger-110"></i>
+							清空
+						</button>
+					</div>
+				</div>
+
+			</div>
+
+		</form>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	</div>
+
+	<!-- 百度编辑器 star -->	
+	<script>var ue = UE.getEditor('content');</script>
+	<!-- 百度编辑器end -->	
+
+	<script>
+	$(function(){
+		$('.btn-info').on('click',function(){
+		$('form').submit();
+	});
+	})
+</script>

@@ -1,0 +1,144 @@
+	<include file="Tpl:head_main" />	
+
+	<!-- 上传图片插件开始 -->	
+
+	<!--[if !IE]>	
+	-->
+	<script type="text/javascript">
+			window.jQuery || document.write("<script src='__PUBLIC__/Admin/Ace/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");</script>
+
+	<!-- <![endif]-->	
+
+	<!--[if IE]>	
+	<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");</script>
+	<![endif]-->	
+
+	<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='__PUBLIC__/Admin/Ace/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");</script>
+
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/typeahead-bs2.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/chosen.jquery.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/fuelux/fuelux.spinner.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/moment.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/date-time/daterangepicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap-colorpicker.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.knob.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.autosize.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/jquery.maskedinput.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/bootstrap-tag.min.js"></script>
+
+	<!-- ace scripts -->	
+
+	<script src="__PUBLIC__/Admin/Ace/assets/js/ace-elements.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/assets/js/ace.min.js"></script>
+	<script src="__PUBLIC__/Admin/Ace/mustache\app\views\assets\scripts\form-elements.js"></script>
+
+	<!-- 上传图片插件结束 -->	
+
+	<div class="page-content">
+	<div class="row">
+	<div class="col-xs-12">
+
+	<div class="widget-main no-padding">
+		<!-- PAGE CONTENT BEGINS -->	
+		<form action="__CONTROLLER__/add" enctype="multipart/form-data"  method="post" class="form-horizontal" role="form">
+
+			<div class="form-group">
+				<label class="col-sm-1 control-label no-padding-right" for="form-field-select-7">上级菜单</label>
+
+				<div class="col-sm-3">
+					<select class="form-control" name="pid" id="form-field-select-7">
+						<option value="0">顶级菜单</option>
+						<volist name="option" id="vo">
+							<option value="{$vo.id}">{$vo.title}</option>
+							<volist name="vo.children" id="v">
+								<option value="{$v.id}">&nbsp;&nbsp;┗━{$v.title}</option>
+							</volist>
+						</volist>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="form-field-1">菜单名称</label>
+
+					<div class="col-sm-7">
+						<input type="text"  id="form-field-1" placeholder="菜单名称" class="col-xs-10 col-sm-5" name="title" />	
+					</div>
+				</div>
+
+				<div class="space-4"></div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="form-field-2">连接</label>
+
+					<div class="col-sm-7">
+						<input type="text" id="form-field-2" placeholder="链接，如：Index/index" class="col-xs-10 col-sm-5"  name="name" />	
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="form-field-3">ICO图标</label>
+
+					<div class="col-sm-7">
+						<input class="col-xs-10 col-sm-5" type="text" id="form-field-3" placeholder="ICO图标" name="icon" />	
+						<div class="space-2"></div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="form-field-3">显示状态</label>
+
+					<div class="col-sm-7">
+						<input class="col-xs-10 col-sm-5" type="checkbox" id="form-field-3" placeholder="ICO图标" name="status" value="1" />	
+						<div class="space-2"></div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-1 control-label no-padding-right" for="form-field-3">排序</label>
+
+					<div class="col-sm-7">
+						<input class="col-xs-10 col-sm-5" type="text" id="form-field-3" placeholder="排序" name="sort" />	
+						<span class="help-inline col-xs-12 col-sm-7">
+							<span class="middle">越小越靠前</span>
+						</span>
+						<div class="space-2"></div>
+
+					</div>
+				</div>
+
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-1 col-md-8">
+						<button class="btn btn-info" type="button"> <i class="icon-ok bigger-110"></i>
+							提交
+						</button>
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn" type="reset"> <i class="icon-undo bigger-110"></i>
+							清空
+						</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	</div>
+
+	<script>
+	$(function(){
+		$('.btn-info').on('click',function(){
+		$('form').submit();
+	});
+	})
+</script>

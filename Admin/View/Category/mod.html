@@ -1,0 +1,79 @@
+	<include file="Tpl:head_main" />	
+
+	<div class="page-content">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->	
+				<form action="__CONTROLLER__/mod" enctype="multipart/form-data"  method="post" class="form-horizontal" role="form">
+					<input type="hidden" name="id" value="{$finData['id']}">
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1">分类名称</label>
+
+						<div class="col-sm-5">
+							<input type="text"  id="form-field-1" placeholder="分类名称" class="col-xs-10 col-sm-5" name="name" value="{$finData['name']}" />	
+						</div>
+					</div>
+
+					<div class="space-4"></div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2">别名</label>
+
+						<div class="col-sm-5">
+							<input type="text" id="form-field-2" placeholder="别名" class="col-xs-10 col-sm-5"  name="nickname" value="{$finData['nickname']}" />	
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-3">排序</label>
+
+						<div class="col-sm-9">
+							<input class="input-sm" type="text" id="form-field-3" placeholder="排序" name="sort"  value="{$finData['sort']}" />	
+							<div class="space-2"></div>
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-select-1">所属栏目</label>
+
+						<div class="col-sm-3">
+							<select class="form-control" name="parent_id" id="form-field-select-1">
+								<if condition="$finData['parent_id'] == 0">
+									<option value="0">顶级栏目</option>
+								</if>
+								<volist name="cate" id="ca">
+									<option value="{$ca.id}"
+									<if condition="$finData['parent_id'] == $ca['id']" >selected="selected"</if>
+									>
+									{$ca.level|str_repeat="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",###}{$ca.name}
+								</option>
+							</volist>
+						</select>
+					</div>
+				</div>
+
+				<div class="clearfix form-actions">
+					<div class="col-md-offset-3 col-md-9">
+						<button class="btn btn-info" type="button"> <i class="icon-ok bigger-110"></i>
+							提交
+						</button>
+						&nbsp; &nbsp; &nbsp;
+						<button class="btn" type="reset"> <i class="icon-undo bigger-110"></i>
+							清空
+						</button>
+					</div>
+				</div>
+
+				<div class="hr hr-24"></div>
+			</form>
+		</div>
+	</div>
+
+	<script>
+	$(function(){
+		$('.btn-info').on('click',function(){
+		$('form').submit();
+	});
+	})
+</script>

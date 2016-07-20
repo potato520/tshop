@@ -1,0 +1,951 @@
+<include file='Tpl:head' />
+
+<body  id="index">
+
+<div id="header">
+    <div class="page-container" id="nav">
+        <div id="logo" class="logo">
+            <a href="/" target="_self" class="hide-text">慕课网</a>
+        </div>
+
+        <button type="button" class="navbar-toggle visible-xs-block js-show-menu" > <i class="icon-menu"></i>
+        </button>
+        <ul class="nav-item">
+            <li class="set-btn visible-xs-block">
+                <a href="/user/newlogin" target="_self">登录</a>
+                /
+                <a href="/user/newsignup" target="_self">注册</a>
+            </li>
+
+            <li>
+                <a href="http://coding.imooc.com" target="_self">实战</a>
+            </li>
+            <li>
+                <a href="/course/program"  target="_self">计划</a>
+            </li>
+            <li>
+                <a href="/wenda"  target="_self">猿问</a>
+            </li>
+            <li>
+                <a href="/article"  target="_self">手记</a>
+            </li>
+
+        </ul>
+
+        <div id="login-area">
+            <ul class="header-unlogin clearfix">
+                <li class="header-app">
+                    <a href="/mobile/app" >
+                        <span class="icon-appdownload"></span>
+                    </a>
+                    <div class="QR-download">
+                        <p id="app-text">慕课网APP下载</p>
+                        <p id="app-type">iPhone / Android / iPad</p>
+                        <img src="/static/img/index/QR-code.jpg"></div>
+                </li>
+                <li class="header-signin">
+                    <a href="#" id="js-signin-btn">登录</a>
+                </li>
+                <li class="header-signup">
+                    <a href="#" id="js-signup-btn">注册</a>
+                </li>
+            </ul>
+        </div>
+        <!--
+        <div class="app-down-area r">
+        <a href="/mobile/app"> <i class="header-app-icon"></i>
+            慕课APP
+        </a>
+    </div>
+    -->
+    <div class='search-warp clearfix' style='min-width: 32px; height: 60px;'>
+        <div class="search-area min" data-search="top-banner">
+            <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入想搜索的内容..." type="text" autocomplete="off">
+            <input type='hidden' class='btn_search' data-search-btn="search-btn" />
+            <ul class="search-area-result" data-suggest-result="suggest-result"></ul>
+        </div>
+        <div class='showhide-search' data-show='no'>
+            <i class='icon-search'></i>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="bk"></div>
+
+<div class="g-banner pr">
+<div class="swiper-container">
+    <div class="menuContent" style="z-index:11!important;">
+        <!--    <ul>
+        <volist name="data" id="v">
+            <li>
+                <div class="li-title">
+                    <a href="__MODULE__/Course/list2/s/{$v.nickname}" target="_blank" >
+                        <p>{$v.name}</p>
+                    </a>
+
+                    <volist name="v.children" id="vv">
+
+                        <p>
+                            <a href="__MODULE__/Course/cat/s/{$vv.nickname}" target="_blank" >{$vv['name']}</a>
+                        </p>
+                    </volist>
+                </div>
+
+                <div class="li-conn" style="display:none;">
+                    <volist name="v.children" id="vv">
+                        <p>
+                            <a href="">{$vv['name']}</a>
+                        </p>
+                    </volist>
+                </div>
+            </li>
+
+        </volist>
+    </ul>
+    -->
+    <ul>
+        <volist name="data" id="v">
+            <li  class="list">
+                <div class="sapjav">
+                <a href="__MODULE__/Course/index/id/{$v.id}" target="_blank" >
+                        <p>{$v.name}</p>
+                    </a>
+                    <volist name="v.children" id="vv"  offset="0" length='3' >
+
+                        <p>
+                            <a href="__MODULE__/Course/index/id/{$v.id}/cid/{$vv.id}" target="_blank" >{$vv['name']}</a>
+                        </p>
+                    </volist>
+                </div>
+
+                <div class="li-conn" style="background:url(__PUBLIC__/Home/images/fe.png)">
+                    <div class="li-main">
+                        <h1>{$v['name']}</h1>
+
+                        <volist name="v.children" id="vv"  >
+
+                            <a href="#">{$vv['name']}</a> <span>/</span>
+                        </volist>
+                    </div>
+
+                </div>
+
+            </li>
+        </volist>
+    </ul>
+
+</div>
+<script>
+$(function(){
+    $('.list').mouseover(function(){        //鼠标一如到list元素里面
+        $(this).find('.title').addClass('cur');     //当前的title标题里面追加上cur属性！！
+        $(this).find('.li-conn').show();       //list的子元素显示
+    });
+
+    $('.list').mouseout(function(){
+        $(this).find('.title').removeClass('cur');
+        $(this).find('.li-conn').hide();
+    });
+})
+    </script>
+
+<div class="swiper-wrapper">
+    <div class="swiper-slide" style="background:red;">
+        <img src="__PUBLIC__/Home/images/lbt1.jpg" alt=""></div>
+    <div class="swiper-slide" style="background:green;">
+        <img src="__PUBLIC__/Home/images/lbt2.jpg" alt=""></div>
+    <div class="swiper-slide" style="background:blue;">
+        <img src="__PUBLIC__/Home/images/lbt3.jpg" alt=""></div>
+</div>
+<!-- 如果需要分页器 -->
+<div class="swiper-pagination"></div>
+
+<!-- 如果需要导航按钮 -->
+<div class="swiper-button-prev swiper-button-white""></div>
+<div class="swiper-button-next swiper-button-white""></div>
+
+<!-- 如果需要滚动条 -->
+<div class="swiper-scrollbar"></div>
+</div>
+
+</div>
+
+<div class="outwrap-recomend">
+<div class="contentwrap">
+<div class="recomend">
+    小慕推荐
+    <a class="fr" href="http://coding.imooc.com" target="_blank">
+        <span class="more">更多</span>
+        <i class="icon-right2"></i>
+    </a>
+</div >
+<div class="recomendContent">
+
+    <div class="box js-upAni">
+        <a href="  http://coding.imooc.com/class/49.html" target="_blank">
+            <div class="pr h100">
+                <img src="http://szimg.mukewang.com/5763761f0001c35e05400300-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">打造扛得住的MySQL数据库架构</p>
+                    <p class="summary ml20">面面俱到讲解影响MySQL性能的各个因素，让你将MySQL架构了然于胸。</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20 fl color-red">￥199.00</span>
+                    <span class="fr mr20">107人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="box js-upAni">
+        <a href="  http://coding.imooc.com/class/48.html" target="_blank">
+            <div class="pr h100">
+                <img src="http://szimg.mukewang.com/576376440001766205400300-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">前端到后台ThinkPHP开发整站</p>
+                    <p class="summary ml20">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20 fl color-red">￥128.00</span>
+                    <span class="fr mr20">536人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="box js-upAni">
+        <a href="  http://coding.imooc.com/class/38.html" target="_blank">
+            <div class="pr h100">
+                <img src="http://szimg.mukewang.com/576376520001da3d05400300-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">7天搞定Nodejs微信公众号开发</p>
+                    <p class="summary ml20">用Koa框架、ES2015新特性及MongoDB数据库，开发微信公众号。</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20 fl color-red">￥199.00</span>
+                    <span class="fr mr20">361人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="box js-upAni">
+        <a href="  http://coding.imooc.com/class/15.html" target="_blank">
+            <div class="pr h100">
+                <img src="http://szimg.mukewang.com/5763765d0001352105400300-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">用组件方式开发 Web App全站</p>
+                    <p class="summary ml20">用HTML5/CSS3/JS流行技术，以组件式开发WebApp全站。</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20 fl color-red">￥78.00</span>
+                    <span class="fr mr20">687人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="box js-upAni">
+        <a href="  http://coding.imooc.com/class/13.html" target="_blank">
+            <div class="pr h100">
+                <img src="http://szimg.mukewang.com/5763766b0001fe1705400300-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">HTML5 移动Web App阅读器</p>
+                    <p class="summary ml20">用HTML5、ES6、Ajax异步、Touch事件等技术，开发商业Web APP</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20 fl color-red">￥68.00</span>
+                    <span class="fr mr20">906人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+</div>
+</div>
+<div class="outwrap-content">
+<div class="contentwrap allshadow web pt28">
+<div class="classify">
+    <p class="title">
+        Web
+        <br/>
+        前端工程师
+    </p>
+    <p class="fs14">可能是最受欢迎的职业</p>
+</div>
+
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/32">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a0c690001a4a504680172.jpg)">
+        <p>Web前端工程师是这样“炼成”的</p>
+    </div>
+</a>
+
+<div class="heigher js-upAni mr0">
+    <div class="pr h100">
+        <a target="_blank" href="/view/43">
+            <img src="http://img.mukewang.com/5746729300016b5206000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">移动优先的跨终端 Web</p>
+                <p class="summary ml20">移动互联时代您必须知道的跨终端技术</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">24773 人在学</span>
+            </div>
+        </a>
+        <div class="list">
+
+            <a target="_blank" href="/view/588">
+                <p class="w180andH30">重拾CSS的乐趣</p>
+            </a>
+
+            <a target="_blank" href="/view/147">
+                <p class="w180andH30">企业网站综合布局实战</p>
+            </a>
+
+            <a target="_blank" href="/view/90">
+                <p class="w180andH30">展开与收起效果</p>
+            </a>
+
+            <a target="_blank" href="/view/507">
+                <p class="w180andH30">React实战--打造画廊应用（上）</p>
+            </a>
+
+            <a target="_blank" href="/view/62">
+                <p class="w180andH30">信息排列效果</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<a target="_blank" href="/view/33 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7c04000144dc06000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">十天精通CSS3</p>
+                <p class="summary ml20">深刻详解CSS3知识让网页穿上绚丽装备</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">112187 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a target="_blank" href="http://coding.imooc.com/class/38.html">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a0caf000129ed04680172.jpg)">
+        <p>7天搞定Nodejs微信公众号开发</p>
+    </div>
+</a>
+
+<a target="_blank" href="/view/57 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7b6c0001594106000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">如何用CSS进行网页布局</p>
+                <p class="summary ml20">用最简洁的案例教你布局的那些知识</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">89167 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="cb"></div>
+</div>
+
+<div class="contentwrap allshadow java pt28">
+<div class="classify">
+    <p class="title">
+        Java
+        <br/>
+        工程师
+    </p>
+    <p class="fs14">学Java，有对象</p>
+</div>
+
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/31">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a0cdf0001232607120172.jpg)">
+        <p>我要成为JAVA攻城狮</p>
+    </div>
+</a>
+
+<div class="heigher js-upAni mr0">
+    <div class="pr h100">
+        <a target="_blank" href="/view/171">
+            <img src="http://img.mukewang.com/570365080001f60306000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">Java眼中的XML---文件读取</p>
+                <p class="summary ml20">通过Java认识并且创造XML文件</p>
+            </div>
+        </a>
+        <div class="box_bottom ">
+            <span class="ml20">38847 人在学</span>
+        </div>
+        <div class="list">
+
+            <a target="_blank" href="/view/289">
+                <p class="w180andH30">Java实现数字签名</p>
+            </a>
+
+            <a target="_blank" href="/view/396">
+                <p class="w180andH30">Hibernate初探之单表映射</p>
+            </a>
+
+            <a target="_blank" href="/view/352">
+                <p class="w180andH30">细说Java多线程之内存可见性</p>
+            </a>
+
+            <a target="_blank" href="/view/478">
+                <p class="w180andH30">Spring事务管理</p>
+            </a>
+
+            <a target="_blank" href="/view/524">
+                <p class="w180andH30">Hibernate注解</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<a target="_blank" href="/view/401 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7ad60001263e06000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">Java微信公众号开发进阶</p>
+                <p class="summary ml20">Java微信公众号开发的进阶课程！</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">44703 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a target="_blank" href="/view/166 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7afb00019e4906000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">JAVA遇见HTML——JSP篇</p>
+                <p class="summary ml20">带你轻松的学习JSP基础知识!</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">81719 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a target="_blank" href="/view/368 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7b2000010bc706000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">初识Java微信公众号开发</p>
+                <p class="summary ml20">Java微信公众号开发的入门课程！</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">64706 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="cb"></div>
+</div>
+
+<div class="contentwrap allshadow php pt28">
+<div class="classify">
+    <p class="title">
+        PHP
+        <br/>
+        工程师
+    </p>
+    <p class="fs14">PHP是最好的语言</p>
+</div>
+
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/34">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a28e7000134be04680364.jpg)">
+        <p class="title">步步深入PHP</p>
+        <div class="line"></div>
+        <div class="subtitle">成为PHP工程师从这里下手</div>
+    </div>
+</a>
+
+<a target="_blank" href=" http://coding.imooc.com/class/48.html">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://szimg.mukewang.com/576376440001766205400300-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">前端到后台ThinkPHP开发整站</p>
+                <p class="summary ml20">用PHP+MySQL+Ajax，页面静态化、数据库备份技术实现你“小全栈”梦想。</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">536 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="heigher js-upAni mr0">
+    <div class="pr h100">
+        <a target="_blank" href="/view/349">
+            <img src="http://img.mukewang.com/570759d900014b7d06000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">Duang~MySQLi扩展库来袭</p>
+                <p class="summary ml20">Duang~一起开启MySQLi的学习之旅吧!</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">14558 人在学</span>
+            </div>
+        </a>
+        <div class="list">
+
+            <a target="_blank" href="/view/244">
+                <p class="w180andH30">洪大师带你解读Symfony2框架</p>
+            </a>
+
+            <a target="_blank" href="/view/68">
+                <p class="w180andH30">JSON应用场景与实战</p>
+            </a>
+
+            <a target="_blank" href="/view/607">
+                <p class="w180andH30">Ajax技术在购物车中的应用（PHP篇）</p>
+            </a>
+
+            <a target="_blank" href="/view/547">
+                <p class="w180andH30">使用wordpress极速建站</p>
+            </a>
+
+            <a target="_blank" href="/view/469">
+                <p class="w180andH30">Think 2015 PHP 技术峰会(北京站）</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<a target="_blank" href="/view/148 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/53c4bf6d00015b0106000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">手把手教你实现电商网站后台开发</p>
+                <p class="summary ml20">手把手教你通过PHP搭建电子商务平台！</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">64606 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="cb"></div>
+</div>
+
+<div class="contentwrap allshadow android pt28">
+<div class="classify">
+    <p class="title">
+        Android
+        <br/>
+        工程师
+    </p>
+    <p class="fs14">我站在Java的肩膀上</p>
+</div>
+
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/36">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a29590001f65107120172.jpg)">
+        <p>Android工程师加薪利器</p>
+    </div>
+</a>
+<div class="heigher js-upAni mr0">
+    <div class="pr h100">
+        <a target="_blank" href="/view/517">
+            <img src="http://img.mukewang.com/574668be0001bb4406000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">Android-节日短信送祝福（功能篇）</p>
+                <p class="summary ml20">此课程为续集-功能篇</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">13071 人在学</span>
+            </div>
+        </a>
+        <div class="list">
+
+            <a target="_blank" href="/view/179">
+                <p class="w180andH30">Android攻城狮的第二门课（第3季）</p>
+            </a>
+
+            <a target="_blank" href="/view/365">
+                <p class="w180andH30">Android必学-BaseAdapter的使用与优化</p>
+            </a>
+
+            <a target="_blank" href="/view/302">
+                <p class="w180andH30">Android图像处理-打造美图秀秀从它开始</p>
+            </a>
+
+            <a target="_blank" href="/view/300">
+                <p class="w180andH30">Android实现卫星菜单</p>
+            </a>
+
+            <a target="_blank" href="/view/215">
+                <p class="w180andH30">Android5.0新特性-Material Design</p>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<a target="_blank" href="/view/579 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7a0d0001070506000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">Android面试解密-自定义View</p>
+                <p class="summary ml20">大神带你去面试！</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">26839 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a target="_blank" href="/view/206 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7c8b0001468206000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">与Android Studio的第一次亲密接触</p>
+                <p class="summary ml20">Google亲儿子AndroidStudio即将上位</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">60405 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<a target="_blank" href="/view/431 ">
+    <div class="normal js-upAni">
+        <div class="pr h100">
+            <img src="http://img.mukewang.com/576b7b410001e1f806000338-228-128.jpg" height="124" width="100%" />
+            <div class="box_body js-upBox">
+                <p class="ml20 title">懒人必备之Android效率开发框架</p>
+                <p class="summary ml20">大神带你学框架,敏捷开发必备！</p>
+            </div>
+            <div class="box_bottom ">
+                <span class="ml20">43065 人在学</span>
+            </div>
+        </div>
+    </div>
+</a>
+
+<div class="cb"></div>
+</div>
+<div class="contentwrap allshadow ios pt28">
+<div class="classify">
+    <p class="title">
+        iOS
+        <br/>
+        工程师
+    </p>
+    <p class="fs14">为果粉而生</p>
+</div>
+
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/46">
+    <div class="longer" style="background-image: url(http://img.mukewang.com/576a29950001c78804680172.jpg)">
+        <p>iOS苹果表开发攻略</p>
+    </div>
+</a>
+<a target="_blank" href="http://www.imooc.com/course/programdetail/pid/46">
+
+    <div class="heigher js-upAni mr0">
+        <div class="pr h100">
+            <a target="_blank" href="/view/635">
+                <img src="http://img.mukewang.com/573589ad00019f4a06000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">玩儿转Swift 2.0（第一季）</p>
+                    <p class="summary ml20">基于Swift2.1讲解swift语言基础知识</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">16650 人在学</span>
+                </div>
+            </a>
+            <div class="list">
+
+                <a target="_blank" href="/view/663">
+                    <p class="w180andH30">玩儿转Swift 2.0（第三季）</p>
+                </a>
+
+                <a target="_blank" href="/view/658">
+                    <p class="w180andH30">iOS基础教程之-Camera摄像头</p>
+                </a>
+
+                <a target="_blank" href="/view/568">
+                    <p class="w180andH30">iOS9新特性之UIStackView</p>
+                </a>
+
+                <a target="_blank" href="/view/127">
+                    <p class="w180andH30">玩儿转Swift</p>
+                </a>
+
+                <a target="_blank" href="/view/173">
+                    <p class="w180andH30">使用Swift开发iOS8 App实战</p>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <a target="_blank" href="/view/609 ">
+        <div class="normal js-upAni">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/576b7a6a0001573206000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">iOS9那些神坑</p>
+                    <p class="summary ml20">iOS9的那些神坑</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">15813 人在学</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a target="_blank" href="http://www.imooc.com/course/programdetail/pid/39">
+        <div class="longer" style="background-image: url(http://img.mukewang.com/576a29ad0001322404680172.jpg)">
+            <p>Swift加薪利器-iOS动画特辑</p>
+        </div>
+    </a>
+
+    <a target="_blank" href="/view/218 ">
+        <div class="normal js-upAni">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/576b7aba0001339506000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">征战Objective-C</p>
+                    <p class="summary ml20">IOS开发可以从这里开始</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">45621 人在学</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <div class="cb"></div>
+</div>
+
+<div class="contentwrap allshadow linux pt28">
+    <div class="classify">
+        <p class="title">
+            Linux
+            <br/>
+            运维工程师
+        </p>
+        <p class="fs14">可能是最舒服的职业</p>
+    </div>
+
+    <div class="normal js-upAni  ">
+        <a href="/view/175" target="_blank">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/57035f110001a57906000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">Linux达人养成计划 I</p>
+                    <p class="summary ml20">Linux的入门级课程！</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">152084 人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="normal js-upAni  ">
+        <a href="/view/344" target="_blank">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/5510c2c500016e9e06000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">Linux系统扫描技术及安全防范</p>
+                    <p class="summary ml20">在Linux系统下实现系统扫描及安全防范。</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">16753 人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="normal js-upAni  ">
+        <a href="/view/258" target="_blank">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/5704cf8c00012c9006000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">Linux网络管理</p>
+                    <p class="summary ml20">为你带来Linux网络环境搭建！</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">48146 人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="normal js-upAni  mr0  ">
+        <a href="/view/216" target="_blank">
+            <div class="pr h100">
+                <img src="http://img.mukewang.com/544f0d9500017d6306000338-228-128.jpg" height="124" width="100%" />
+                <div class="box_body js-upBox">
+                    <p class="ml20 title">Linux中的计划任务—Crontab</p>
+                    <p class="summary ml20">Crontab—带你从定时重复工作中解脱出来</p>
+                </div>
+                <div class="box_bottom ">
+                    <span class="ml20">19060 人在学</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+<div class="cb"></div>
+<div class="contentwrap allshadow article pt28">
+    <div class="classify">
+        <p class="title">手记&猿问</p>
+        <p class="fs14 mb122">IT知识和答疑，想要的都在这</p>
+        <a target="_blank" href="/article">
+            <div class="linkbtn">手记</div>
+        </a>
+        <a target="_blank" href="/wenda">
+            <div class="linkbtn">猿问</div>
+        </a>
+        <a target="_blank" href="/mall/index">
+            <div class="linkbtn">积分商城</div>
+        </a>
+    </div>
+    <a href="http://www.imooc.com/article/8201" target="_blank">
+        <div class="longer" style="background-image: url(http://img.mukewang.com/576a29f00001ad3804680172.jpg)">
+            <p>毕业季求职攻略：Web前端面试题及答案汇</p>
+        </div>
+    </a>
+    <a href="http://www.imooc.com/wenda/detail/319862" target="_blank">
+        <div class="longer mr0" style="background-image: url(http://img.mukewang.com/576a2a0500016f9004680172.jpg)">
+            <p>导航设置fixed缩成一块，怎么办？</p>
+        </div>
+    </a>
+    <div class="longer" style="background-image: url(/static/img/home/shouji.png)">
+        <div class="left">热门手记</div>
+        <div class="right">
+
+            <a href="http://www.imooc.com/article/8329" target="_blank">
+                <p class="h32">每个程序员都该会的35个jQuery小技巧</p>
+            </a>
+
+            <a href="http://www.imooc.com/article/9213" target="_blank">
+                <p class="h32">HTML、CSS和JS之间的那些事儿</p>
+            </a>
+
+            <a href="http://www.imooc.com/article/8977" target="_blank">
+                <p class="h32">顶级数据库架构师超10年经验分享</p>
+            </a>
+
+            <a href="http://www.imooc.com/article/6457" target="_blank">
+                <p class="h32">妹子教你5招制作自己的安卓APP</p>
+            </a>
+        </div>
+    </div>
+    <div class="longer mr0" style="background-image: url(/static/img/home/Wenda.png)">
+        <div class="left">猿问推荐</div>
+        <div class="right">
+
+            <a target="_blank" href="http://www.imooc.com/wenda/detail/319126">
+                <p class="h32">如何用css让图片上有一块透明？</p>
+            </a>
+
+            <a target="_blank" href="http://www.imooc.com/wenda/detail/320212">
+                <p class="h32">DIV里四个子元素，点击任意后如何获值？</p>
+            </a>
+
+            <a target="_blank" href="http://www.imooc.com/wenda/detail/319920">
+                <p class="h32">bootstrap导航条navbar brand怎么放右边</p>
+            </a>
+
+            <a target="_blank" href="http://www.imooc.com/wenda/detail/319082">
+                <p class="h32">怎样生成随机数组,然后排序输出数组</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="cb"></div>
+</div>
+</div>
+
+<div class="footer bg-white idx-minwidth">
+<div class="container">
+    <div class="footer-wrap idx-width">
+        <div class="footer-sns">
+            <a href="http://weibo.com/u/3306361973" class="footer-sns-weibo hide-text" target="_blank" title="新浪微博">新浪微博</a>
+            <a href="javascript:void(0);" class="footer-sns-weixin" target="_blank" title="微信">
+                <i class="footer-sns-weixin-expand"></i>
+            </a>
+            <a href="http://t.qq.com/mukewang999" class="footer-sns-qqweibo hide-text" target="_blank" title="腾讯微博">腾讯微博</a>
+            <a href="http://user.qzone.qq.com/1059809142/" class="footer-sns-qzone hide-text" target="_blank" title="QQ空间">QQ空间</a>
+        </div>
+    </div>
+    <div class="footer-link">
+        <a href="/about/us" target="_blank" title="关于我们">关于我们</a>
+        <a href="/about/job" target="_blank" title="人才招聘">人才招聘</a>
+        <a href="/about/recruit" target="_blank" title="讲师招募">讲师招募</a>
+        <a href="/about/contact" target="_blank" title="联系我们">联系我们</a>
+        <a href="/user/feedback" target="_blank" title="意见反馈">意见反馈</a>
+        <a href="/about/friendly" target="_blank">友情链接</a>
+    </div>
+    <div class="footer-copyright">
+        <p>©&nbsp2016&nbspimooc.com&nbsp&nbsp京ICP备13046642号</p>
+    </div>
+
+</div>
+</div>
+
+<div id="main"></div>
+
+<div id="J_GotoTop" class="elevator">
+<a href="javascript:void(0)" class="elevator-top" style="display:none" title="返回顶部" id="backTop">
+    <i class="icon-up2"></i>
+</a>
+<a href="/user/feedback" class="elevator-msg" title="意见反馈">
+    <i class="icon-feedback"></i>
+</a>
+<a href="javascript:" class="elevator-app" title="app下载">
+    <i class="icon-appdownload"></i>
+    <div class="elevator-app-box"></div>
+</a>
+<a href="javascript:" class="elevator-weixin" title="官方微信">
+    <i class="icon-wxgzh"></i>
+    <div class="elevator-weixin-box"></div>
+</a>
+</div>
+
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    effect : 'fade',
+    loop: true,
+    
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    
+    // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+  })        
+  </script>
+</div>
+</body>
+</html>

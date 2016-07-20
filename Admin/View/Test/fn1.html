@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	{$time|date="Y - m -d h:i:s", ###}
+
+	<hr>
+	<php>echo "在THINKPHP 中使用php 内置函数:<br>"</php>
+
+	{$str|mb_substr=0,3,'utf-8'}
+
+	<hr>
+	使用变量默认值：
+	{$name|default="如果变量的值为空，获取为null的话。使用变量的默认值"}
+</body>
+</html>

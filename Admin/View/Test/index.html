@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	#Box{width: 100%;height: auto; background: #ccc;}
+</style>
+{//引入头部公用摸板 传入参数，可以在摸板中显示}
+<include file="./Admin/View/Test/head.html"  title="美嘉留学" />
+<hr>
+<div id="Box">
+{//行注释}
+{/*块注释*/}
+行注释和块注释
+<hr>
+
+输出一维数组(索引方式)：
+{$arr1.0} - {$arr1.1} - {$arr1.2} - {$arr1.3}
+<br>
+输出一维数组(关联方式)：
+{$arr1[0]} - {$arr1[1]} - {$arr1[2]} - {$arr1[3]}
+
+
+
+<hr>
+输出二维数组：
+{$arr2.0.0} - {$arr2.0.1} - {$arr2.0.2} - {$arr2.0.3} 
+<br>
+输出关联的二维数组：
+{$arr2.1.name} - {$arr2.1.sex} - {$arr2.1.age}
+
+
+<hr>
+thinkphp中的系统变量，就是一些PHP的全局变量 <br>
+server信息中的path：{$Think.server.path} <br>
+get信息中的id：{$Think.get.id} <br>
+cookie信息中的sessionid：{$Think.cookie.PHPSESSID} <br>
+config信息中URL_MODEL：{$Think.config.URL_MODEL} <br>
+
+</div>
+
+<hr>
+{//引入底部公用摸板 [控制器/模板名称]}
+<include file="Test/foot" />
+	
+</body>
+</html>

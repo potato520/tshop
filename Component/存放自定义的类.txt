@@ -1,0 +1,4 @@
+邮件发送包含三个类文件：
+class.phpmailer.php		#发送邮件核心类
+class.pop3.php  		#接收邮件类
+class.smtp.php 			#发送邮件类
